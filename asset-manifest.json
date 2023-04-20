@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/rest-countries-react/static/js/main.2b17edb8.js",
+    "index.html": "/rest-countries-react/index.html",
+    "static/media/toggle-icon.svg": "/rest-countries-react/static/media/toggle-icon.5f0db093d6d56eabfbe5e27009a8a0d7.svg",
+    "main.2b17edb8.js.map": "/rest-countries-react/static/js/main.2b17edb8.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.2b17edb8.js"
+  ]
+}
