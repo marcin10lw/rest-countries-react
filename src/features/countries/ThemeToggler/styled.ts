@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as TogglerImage } from "./toggle-icon.svg";
+import { TRANSITION_DURATION, TRANSITION_TIMING } from "../transition";
 
 export const TogglerWrapper = styled.div``;
 
@@ -12,6 +13,8 @@ export const TogglerButton = styled.button`
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  color: ${({ theme }) => theme.colors.textColor};
+  transition: color ${TRANSITION_DURATION} ${TRANSITION_TIMING};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 12px;

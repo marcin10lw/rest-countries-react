@@ -22,3 +22,7 @@ export const darkTheme = {
     elementsColor: "hsl(209, 23%, 22%)",
   },
 };
+
+export type ThemeProps = {
+  theme: typeof lightTheme | typeof darkTheme;
+};
