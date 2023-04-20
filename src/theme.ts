@@ -16,7 +16,9 @@ export const lightTheme = {
 
 export const darkTheme = {
   ...theme,
-  textColor: "hsl(0, 0%, 100%)",
-  backgroundColor: "hsl(207, 26%, 17%)",
-  elementsColor: "hsl(209, 23%, 22%)",
+  colors: {
+    textColor: "hsl(0, 0%, 100%)",
+    backgroundColor: "hsl(207, 26%, 17%)",
+    elementsColor: "hsl(209, 23%, 22%)",
+  },
 };
