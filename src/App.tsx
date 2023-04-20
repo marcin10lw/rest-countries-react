@@ -1,9 +1,7 @@
-import Header from "./Header";
+import Header from "./features/countries/Header";
 
 function App() {
-  return (
-    <Header />
-  );
+  return <Header />;
 }
 
 export default App;

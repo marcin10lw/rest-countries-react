@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { IoMoonOutline } from "react-icons/io5";
 import { ReactComponent as TogglerImage } from "./toggle-icon.svg";
 
 export const TogglerWrapper = styled.div``;
