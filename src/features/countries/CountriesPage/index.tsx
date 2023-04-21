@@ -12,11 +12,14 @@ import { Link } from "react-router-dom";
 import { GridList } from "./styled";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import Search from "../components/Search";
+import Navigation from "../components/Navigation";
 
 type Country = {
   id: string;
   flags: {
     png: string;
+    alt: string;
   };
   name: {
     common: string;
@@ -33,27 +36,31 @@ const CountriesPage = () => {
 
   useEffect(() => {
     dispatch(fetchCountries());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Container>
       {status === "loading" && <Loader />}
       {status === "success" && (
-        <GridList>
-          {countries.map((country) => (
-            <li key={country.id}>
-              <Link to={`/countries/${country.id}`}>
-                <Country
-                  image={country.flags.png}
-                  name={country.name.common}
-                  capital={country.capital}
-                  population={country.population}
-                  region={country.region}
-                />
-              </Link>
-            </li>
-          ))}
-        </GridList>
+        <>
+          <Navigation />
+          <GridList>
+            {countries.map((country) => (
+              <li key={country.id}>
+                <Link to={`/countries/${country.id}`}>
+                  <Country
+                    image={country.flags.png}
+                    name={country.name.common}
+                    capital={country.capital}
+                    population={country.population}
+                    region={country.region}
+                    alt={country.flags.alt}
+                  />
+                </Link>
+              </li>
+            ))}
+          </GridList>
+        </>
       )}
       {status === "error" && <Error />}
     </Container>
