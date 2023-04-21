@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as ArrowImage } from "./arrow.svg";
 import { TRANSITION_DURATION, TRANSITION_TIMING } from "../../transition";
 
@@ -7,13 +7,9 @@ export const StyledSelectRegion = styled.div`
   max-width: 200px;
   width: 100%;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
-  background-color: ${({ theme }) => theme.colors.elementsColor};
   color: ${({ theme }) => theme.colors.textColor};
   font-size: 14px;
-  border-radius: 5px;
-  transition-property: background-color, color;
-  transition-duration: ${TRANSITION_DURATION};
-  transition-timing-function: ${TRANSITION_TIMING};
+  transition: color ${TRANSITION_DURATION} ${TRANSITION_TIMING};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 12px;
@@ -29,10 +25,12 @@ export const OpenWindowButton = styled.button`
   border: none;
   padding: 18px 24px;
   color: ${({ theme }) => theme.colors.textColor};
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.colors.elementsColor};
+  border-radius: 5px;
   cursor: pointer;
-  transition: color ${TRANSITION_DURATION} ${TRANSITION_TIMING},
-    opacity 140ms ease-in-out;
+  transition-property: background-color, color, opacity;
+  transition-duration: ${TRANSITION_DURATION};
+  transition-timing-function: ${TRANSITION_TIMING};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     padding: 14px 24px;
@@ -46,18 +44,25 @@ export const OpenWindowButton = styled.button`
 export const SelectRegionArrow = styled(ArrowImage)`
   width: 12px;
   height: 12px;
+  transition: transform 300ms ease-in-out;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 10px;
     height: 10px;
   }
+
+  ${({ open }: { open: boolean }) =>
+    open &&
+    css`
+      transform: rotate(180deg);
+    `}
 `;
 
 export const SelectWindow = styled.ul`
   position: absolute;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  background-color: ${({ theme }) => theme.colors.elementsColor};
   z-index: 99;
-  background-color: inherit;
-  box-shadow: inherit;
   border-radius: inherit;
   width: 100%;
   padding: 16px 24px;
@@ -66,7 +71,7 @@ export const SelectWindow = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  cursor: initial;
+  transition: background-color ${TRANSITION_DURATION} ${TRANSITION_TIMING};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     top: 46px;
