@@ -34,7 +34,7 @@ export const StyledLoader = styled.svg`
 
   circle {
     fill: none;
-    stroke: hsl(214, 97%, 59%);
+    stroke: ${({ theme }) => theme.colors.textColor};
     stroke-width: 2;
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;

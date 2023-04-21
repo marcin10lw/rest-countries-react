@@ -9,8 +9,14 @@ export const StyledCountry = styled.article`
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.elementsColor};
   color: ${({ theme }) => theme.colors.textColor};
-  transition-property: background-color, color;
+  transition-property: background-color, color, transform, box-shadow;
   transition-duration: ${TRANSITION_DURATION};
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px ${({ theme }) => theme.colors.shadowColor};
+  }
 `;
 
 export const CountryImage = styled.img`
