@@ -4,13 +4,14 @@ import {
   selectCountries,
   selectStatus,
 } from "./countriesSlice";
-import { Container } from "../../../common/Container";
+import { Container } from "../components/Container";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import Country from "../components/Country";
 import { Link } from "react-router-dom";
 import { GridList } from "./styled";
-import Loader from "../../../common/Loader";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 type Country = {
   id: string;
@@ -54,7 +55,7 @@ const CountriesPage = () => {
           ))}
         </GridList>
       )}
-      {status === "error" && <span>error</span>}
+      {status === "error" && <Error />}
     </Container>
   );
 };
