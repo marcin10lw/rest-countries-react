@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   CountryDetail,
   CountryDetails,
@@ -13,6 +14,7 @@ type CountryProps = {
   population: number;
   region: string;
   capital: string;
+  alt: string;
 };
 
 const Country = ({
@@ -21,10 +23,13 @@ const Country = ({
   population,
   region,
   capital,
+  alt,
 }: CountryProps) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <StyledCountry>
-      <CountryImage src={image} alt={name} />
+      <CountryImage onLoad={() => setImageLoaded(true)} src={image} alt={alt} />
       <CountryInfo>
         <CountryName>{name}</CountryName>
         <CountryDetails>

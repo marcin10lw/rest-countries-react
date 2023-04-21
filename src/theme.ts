@@ -19,6 +19,7 @@ export const darkTheme = {
   ...theme,
   colors: {
     textColor: "hsl(0, 0%, 100%)",
+    inputColor: "hsl(0, 0%, 100%)",
     backgroundColor: "hsl(207, 26%, 17%)",
     elementsColor: "hsl(209, 23%, 22%)",
     shadowColor: "hsl(0, 0%, 3%)",
