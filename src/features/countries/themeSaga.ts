@@ -1,9 +1,15 @@
-import { call, select, takeEvery } from "redux-saga/effects";
-import { selectIsDarkModeOn, setIsDarkModeOn } from "./themeSlice";
+import {
+  SagaReturnType,
+  SelectEffect,
+  call,
+  select,
+  takeEvery,
+} from "redux-saga/effects";
+import { selectIsDarkModeOn } from "./themeSlice";
 import { saveThemeToLocalStorage } from "./themeLocalStorage";
 
 function* watchSaveIsDarkThemeToLocalStorageHandler() {
-  const isDarkModeOn = yield select(selectIsDarkModeOn);
+  const isDarkModeOn: SelectEffect = yield select(selectIsDarkModeOn);
   yield call(saveThemeToLocalStorage, isDarkModeOn);
 }
 

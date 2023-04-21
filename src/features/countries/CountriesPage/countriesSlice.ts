@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../store";
+import { nanoid } from "nanoid";
 
 const countriesSlice = createSlice({
   name: "countries",
@@ -13,7 +14,12 @@ const countriesSlice = createSlice({
     },
     fetchCountriesSuccess: (state, { payload: countries }) => {
       state.status = "success";
-      state.countries = countries;
+      state.countries = countries.map((country: {}) => {
+        return {
+          ...country,
+          id: nanoid(),
+        };
+      });
     },
     fetchCountriesError: (state) => {
       state.status = "error";
