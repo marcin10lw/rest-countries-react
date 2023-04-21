@@ -21,5 +21,9 @@ export const GlobalStyle = createGlobalStyle<ThemeProps>`
     font-family: 'Nunito Sans', sans-serif;
     background-color: ${({ theme }) => theme.colors.backgroundColor};
     transition: background-color ${TRANSITION_DURATION} ${TRANSITION_TIMING};
+
+    a {
+      text-decoration: none;
+    }
   }
 `;

@@ -1,24 +1,18 @@
-import { useEffect } from "react";
+import CountriesPage from "./CountriesPage";
 import Header from "./Header";
-import { useDispatch } from "react-redux";
-import {
-  fetchCountries,
-  selectCountries,
-  selectStatus,
-} from "./countriesSlice";
-import { useSelector } from "react-redux";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 const Countries = () => {
-  const dispatch = useDispatch();
-  const countries = useSelector(selectCountries);
-  const status = useSelector(selectStatus);
-  console.log(countries);
-
-  useEffect(() => {
-    dispatch(fetchCountries());
-  }, []);
-
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Navigate to="/countries" />} />
+        <Route path="/countries" element={<CountriesPage />} />
+        <Route path="/countries/:id" element={<div>id</div>} />
+      </Routes>
+    </>
+  );
 };
 
 export default Countries;
