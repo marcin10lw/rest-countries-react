@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getThemeFromLocalStorage } from "./themeLocalStorage";
+import { RootState } from "../../store";
 
 const themeSlice = createSlice({
   name: "theme",
@@ -15,8 +16,8 @@ const themeSlice = createSlice({
 
 export const { setIsDarkModeOn } = themeSlice.actions;
 
-const selectThemeStatus = (state) => state.theme;
-export const selectIsDarkModeOn = (state) =>
+const selectThemeStatus = (state: RootState) => state.theme;
+export const selectIsDarkModeOn = (state: RootState) =>
   selectThemeStatus(state).isDarkModeOn;
 
 export default themeSlice.reducer;
