@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TRANSITION_DURATION } from "../transition";
+import { TRANSITION_DURATION } from "../../transition";
 
 export const StyledCountry = styled.article`
   height: 100%;

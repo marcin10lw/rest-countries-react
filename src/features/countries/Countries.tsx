@@ -1,5 +1,5 @@
 import CountriesPage from "./CountriesPage";
-import Header from "./Header";
+import Header from "./components/Header";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 const Countries = () => {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as TogglerImage } from "./toggle-icon.svg";
-import { TRANSITION_DURATION, TRANSITION_TIMING } from "../transition";
+import { TRANSITION_DURATION, TRANSITION_TIMING } from "../../transition";
 
 export const TogglerWrapper = styled.div``;
 

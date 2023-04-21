@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TRANSITION_DURATION, TRANSITION_TIMING } from "../transition";
+import { TRANSITION_DURATION, TRANSITION_TIMING } from "../../transition";
 
 export const StyledHeader = styled.header`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);

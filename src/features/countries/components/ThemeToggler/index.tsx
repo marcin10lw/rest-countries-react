@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setIsDarkModeOn } from "../themeSlice";
+import { setIsDarkModeOn } from "../../themeSlice";
 import { TogglerButton, TogglerIcon, TogglerWrapper } from "./styled";
 
 const ThemeToggler = () => {

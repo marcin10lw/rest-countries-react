@@ -7,7 +7,7 @@ import {
 import { Container } from "../../../common/Container";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import Country from "../Country";
+import Country from "../components/Country";
 import { Link } from "react-router-dom";
 import { GridList } from "./styled";
 import Loader from "../../../common/Loader";
