@@ -19,6 +19,10 @@ const SelectRegion = () => {
 
   const dispatch = useDispatch();
 
+  const windowText = region
+    ? regions.find(({ alias }) => region === alias)?.name
+    : "Filter by Region";
+
   return (
     <StyledSelectRegion>
       <OpenWindowButton
@@ -26,7 +30,7 @@ const SelectRegion = () => {
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsWindowOpen((isWindowOpen) => !isWindowOpen)}
       >
-        Filter by Region
+        {windowText}
         <SelectRegionArrow open={isWindowOpen} />
       </OpenWindowButton>
 
