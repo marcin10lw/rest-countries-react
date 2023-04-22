@@ -8,15 +8,16 @@ import {
 
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams({ country: "" });
+  const query = searchParams.get("country");
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
 
-    if (value) {
-      setSearchParams({ country: value });
-    } else {
+    if (value.trim() === "") {
       searchParams.delete("country");
       setSearchParams(searchParams);
+    } else {
+      setSearchParams({ country: value });
     }
   };
 
@@ -26,6 +27,7 @@ const Search = () => {
         <SearchIcon />
       </SearchIconWrapper>
       <SearchInput
+        value={query || ""}
         placeholder="Search for a country..."
         onChange={onInputChange}
       />
