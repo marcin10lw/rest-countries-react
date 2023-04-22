@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { GridList } from "./styled";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
-import Search from "../components/Search";
+import Search from "./Search";
 import Navigation from "../components/Navigation";
 
 type Country = {

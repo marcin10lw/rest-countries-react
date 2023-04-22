@@ -25,6 +25,7 @@ const SelectRegion = () => {
 
       <WindowList
         as={motion.ul}
+        initial={false}
         variants={listVariants}
         animate={isWindowOpen ? "open" : "closed"}
         style={{

@@ -1,5 +1,5 @@
-import Search from "../Search";
-import SelectRegion from "../SelectRegion";
+import Search from "../../CountriesPage/Search";
+import SelectRegion from "../../CountriesPage/SelectRegion";
 import { StyledNavigation } from "./styled";
 
 const Navigation = () => {
