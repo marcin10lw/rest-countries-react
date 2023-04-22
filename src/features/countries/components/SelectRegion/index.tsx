@@ -1,42 +1,13 @@
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import { listVariants, itemVariants } from "./variants";
 import {
   SelectButton,
   SelectRegionArrow,
-  SelectWindow,
+  WindowList,
   OpenWindowButton,
   StyledSelectRegion,
 } from "./styled";
 import { useState } from "react";
-
-const listVariants = {
-  open: {
-    clipPath: "inset(0% 0% 0% 0% round 10px)",
-    transition: {
-      type: "spring",
-      bounce: 0,
-      duration: 0.7,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
-    },
-  },
-  closed: {
-    clipPath: "inset(10% 50% 90% 50% round 10px)",
-    transition: {
-      type: "spring",
-      bounce: 0,
-      duration: 0.3,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 },
-  },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-};
 
 const SelectRegion = () => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
@@ -52,7 +23,7 @@ const SelectRegion = () => {
         <SelectRegionArrow open={isWindowOpen} />
       </OpenWindowButton>
 
-      <SelectWindow
+      <WindowList
         as={motion.ul}
         variants={listVariants}
         animate={isWindowOpen ? "open" : "closed"}
@@ -75,7 +46,7 @@ const SelectRegion = () => {
         <motion.li variants={itemVariants}>
           <SelectButton>Oceania</SelectButton>
         </motion.li>
-      </SelectWindow>
+      </WindowList>
     </StyledSelectRegion>
   );
 };

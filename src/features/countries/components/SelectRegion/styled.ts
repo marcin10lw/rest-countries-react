@@ -58,9 +58,8 @@ export const SelectRegionArrow = styled(ArrowImage)`
     `}
 `;
 
-export const SelectWindow = styled.ul`
+export const WindowList = styled.ul`
   position: absolute;
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   background-color: ${({ theme }) => theme.colors.elementsColor};
   z-index: 99;
   border-radius: inherit;

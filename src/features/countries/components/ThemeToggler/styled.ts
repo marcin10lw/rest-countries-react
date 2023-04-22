@@ -21,9 +21,16 @@ export const TogglerButton = styled.button`
   }
 `;
 
+export const ToggleIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const TogglerIcon = styled(TogglerImage)`
   width: 20px;
   height: 20px;
+  color: ${({ theme }) => theme.colors.textColor};
+  transition: color 1s ease-in-out;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 16px;
