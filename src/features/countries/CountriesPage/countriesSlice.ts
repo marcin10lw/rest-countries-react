@@ -22,6 +22,7 @@ const countriesSlice = createSlice({
   initialState: {
     countries: [],
     status: "idle",
+    selectedRegion: "",
   },
   reducers: {
     fetchCountries: (state) => {
@@ -39,22 +40,50 @@ const countriesSlice = createSlice({
     fetchCountriesError: (state) => {
       state.status = "error";
     },
+    setRegion: (state, { payload: region }) => {
+      if (state.selectedRegion === region) {
+        state.selectedRegion = "";
+      } else {
+        state.selectedRegion = region;
+      }
+    },
   },
 });
 
-export const { fetchCountries, fetchCountriesSuccess, fetchCountriesError } =
-  countriesSlice.actions;
+export const {
+  fetchCountries,
+  fetchCountriesSuccess,
+  fetchCountriesError,
+  setRegion,
+} = countriesSlice.actions;
 
 const selectCountriesState = (state: RootState) => state.countries;
 
 export const selectCountries = (state: RootState) =>
   selectCountriesState(state).countries;
 
+export const selectSelectedRegion = (state: RootState) =>
+  selectCountriesState(state).selectedRegion;
+
+const selectCountriesByRegion = (state: RootState) => {
+  const region: string = selectSelectedRegion(state);
+  const countries: Country[] = selectCountries(state);
+
+  const countriesByRegion: Country[] = countries.filter((country) => {
+    return country.region?.toLocaleUpperCase() === region.toLocaleUpperCase();
+  });
+
+  return countriesByRegion;
+};
+
 export const selectCountriesByQuery = (
   state: RootState,
   query: string | null
 ): Country[] => {
-  const countries: Country[] = selectCountries(state);
+  const region = selectSelectedRegion(state);
+  const countries: Country[] = region
+    ? selectCountriesByRegion(state)
+    : selectCountries(state);
 
   if (query === "" || query === null) {
     return countries;

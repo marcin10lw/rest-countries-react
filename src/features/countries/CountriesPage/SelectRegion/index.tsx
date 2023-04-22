@@ -8,9 +8,16 @@ import {
   StyledSelectRegion,
 } from "./styled";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectSelectedRegion, setRegion } from "../countriesSlice";
+import { useDispatch } from "react-redux";
+import { regions } from "./regions";
 
 const SelectRegion = () => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
+  const region = useSelector(selectSelectedRegion);
+
+  const dispatch = useDispatch();
 
   return (
     <StyledSelectRegion>
@@ -32,21 +39,16 @@ const SelectRegion = () => {
           pointerEvents: isWindowOpen ? "auto" : "none",
         }}
       >
-        <motion.li variants={itemVariants}>
-          <SelectButton>Africa</SelectButton>
-        </motion.li>
-        <motion.li variants={itemVariants}>
-          <SelectButton>America</SelectButton>
-        </motion.li>
-        <motion.li variants={itemVariants}>
-          <SelectButton>Asia</SelectButton>
-        </motion.li>
-        <motion.li variants={itemVariants}>
-          <SelectButton>Europe</SelectButton>
-        </motion.li>
-        <motion.li variants={itemVariants}>
-          <SelectButton>Oceania</SelectButton>
-        </motion.li>
+        {regions.map(({ id, alias, name }) => (
+          <motion.li key={id} variants={itemVariants}>
+            <SelectButton
+              isActive={alias === region}
+              onClick={() => dispatch(setRegion(alias))}
+            >
+              {name}
+            </SelectButton>
+          </motion.li>
+        ))}
       </WindowList>
     </StyledSelectRegion>
   );

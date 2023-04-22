@@ -11,6 +11,7 @@ const EXAMPLE_DELAY = 500;
 
 function* fetchCountriesHandler() {
   yield delay(EXAMPLE_DELAY);
+
   try {
     const countries: AxiosResponse = yield call(getCountries);
     yield put(fetchCountriesSuccess(countries));

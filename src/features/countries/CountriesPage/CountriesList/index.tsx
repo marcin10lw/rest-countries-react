@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { StyledCountriesList } from "./styled";
-import { selectCountries, selectCountriesByQuery } from "../countriesSlice";
+import { selectCountriesByQuery } from "../countriesSlice";
 import { Link, useSearchParams } from "react-router-dom";
 import Country from "../../components/Country";
 import { RootState } from "../../../../store";
@@ -11,7 +11,6 @@ const CountriesList = () => {
   const countries = useSelector((state: RootState) =>
     selectCountriesByQuery(state, query)
   );
-  console.log(countries);
 
   return (
     <StyledCountriesList>

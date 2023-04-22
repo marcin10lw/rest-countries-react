@@ -90,4 +90,10 @@ export const SelectButton = styled.button`
   &:hover {
     opacity: 0.75;
   }
+
+  ${({ isActive }: { isActive: boolean }) =>
+    isActive &&
+    css`
+      text-decoration: underline;
+    `}
 `;
