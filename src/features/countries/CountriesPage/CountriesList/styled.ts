@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const GridList = styled.ul`
+export const StyledCountriesList = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(264px, 1fr));
   justify-content: center;
