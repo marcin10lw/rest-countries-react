@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { fetchCountries, selectStatus } from "./countriesSlice";
+import { fetchCountries, selectStatus } from "../countriesSlice";
 import { Container } from "../components/Container";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";

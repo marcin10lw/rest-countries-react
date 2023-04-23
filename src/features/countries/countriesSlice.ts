@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../../store";
+import { RootState } from "../../store";
 import { nanoid } from "nanoid";
 
 type Country = {
@@ -10,6 +10,7 @@ type Country = {
   };
   name: {
     common: string;
+    official: string;
   };
   altSpellings: string[];
   capital: string;
@@ -98,7 +99,10 @@ export const selectCountriesByQuery = (
         .includes(trimmedQuery?.toLocaleUpperCase()) ||
       country.altSpellings.some((altName) =>
         altName.toLocaleUpperCase().includes(trimmedQuery.toLocaleUpperCase())
-      )
+      ) ||
+      country.name.official
+        .toLocaleUpperCase()
+        .includes(trimmedQuery.toLocaleUpperCase())
     );
   };
 

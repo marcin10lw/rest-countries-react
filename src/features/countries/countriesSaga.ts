@@ -4,7 +4,7 @@ import {
   fetchCountriesError,
   fetchCountriesSuccess,
 } from "./countriesSlice";
-import { getCountries } from "../getCountries";
+import { getCountries } from "./getCountries";
 import { AxiosResponse } from "axios";
 
 const EXAMPLE_DELAY = 500;

@@ -9,7 +9,7 @@ import {
 } from "./styled";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectSelectedRegion, setRegion } from "../countriesSlice";
+import { selectSelectedRegion, setRegion } from "../../countriesSlice";
 import { useDispatch } from "react-redux";
 import { regions } from "./regions";
 
