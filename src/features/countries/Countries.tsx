@@ -1,4 +1,5 @@
 import CountriesPage from "./CountriesPage";
+import CountryPage from "./CountryPage";
 import Header from "./components/Header";
 import { Routes, Route, Navigate } from "react-router-dom";
 
@@ -9,7 +10,7 @@ const Countries = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/countries" />} />
         <Route path="/countries" element={<CountriesPage />} />
-        <Route path="/countries/:id" element={<div>id</div>} />
+        <Route path="/countries/:id" element={<CountryPage />} />
       </Routes>
     </>
   );

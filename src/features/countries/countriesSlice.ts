@@ -63,6 +63,12 @@ const selectCountriesState = (state: RootState) => state.countries;
 export const selectCountries = (state: RootState) =>
   selectCountriesState(state).countries;
 
+export const selectCountryById = (
+  state: RootState,
+  id: string | undefined
+): Country =>
+  selectCountries(state).find((country: Country) => country.id === id)!;
+
 export const selectSelectedRegion = (state: RootState) =>
   selectCountriesState(state).selectedRegion;
 

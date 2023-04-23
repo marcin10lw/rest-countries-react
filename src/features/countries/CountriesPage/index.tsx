@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
-import Navigation from "../components/Navigation";
+import Navigation from "./Navigation";
 import CountriesList from "./CountriesList";
 
 const CountriesPage = () => {
