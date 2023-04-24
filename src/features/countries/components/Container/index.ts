@@ -11,6 +11,8 @@ export const Container = styled.div`
   ${({ location }: { location?: string }) =>
     location === "countryPage" &&
     css`
-      margin-top: 80px;
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        padding: 0 28px;
+      }
     `}
 `;

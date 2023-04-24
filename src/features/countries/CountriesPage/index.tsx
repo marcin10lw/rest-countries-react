@@ -14,7 +14,7 @@ const CountriesPage = () => {
 
   useEffect(() => {
     dispatch(fetchCountries());
-  }, [dispatch]);
+  }, []);
 
   return (
     <Container>
