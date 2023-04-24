@@ -20,7 +20,7 @@ const CountriesList = () => {
     <StyledCountriesList>
       {sortedCountries.map((country) => (
         <li key={country.id}>
-          <Link to={`/countries/${country.id}`}>
+          <Link to={`/countries/${country.name.common}`}>
             <Country
               image={country.flags.png}
               name={country.name.common}
