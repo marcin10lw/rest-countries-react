@@ -33,6 +33,14 @@ const Pagination = ({ countriesPerPage }: PaginationProps) => {
     pageNumbers.push(i);
   }
 
+  const EXAMPLE_DELAY = 700;
+  const onButtonClick = (number: number) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      dispatch(setCurrentPage(number));
+    }, EXAMPLE_DELAY);
+  };
+
   return (
     <StyledPagination>
       <PaginationWrapper>
@@ -40,7 +48,7 @@ const Pagination = ({ countriesPerPage }: PaginationProps) => {
           <PaginationButton
             key={number}
             active={number === currentPage}
-            onClick={() => dispatch(setCurrentPage(number))}
+            onClick={() => onButtonClick(number)}
           >
             {number}
           </PaginationButton>
