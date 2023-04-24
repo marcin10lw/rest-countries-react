@@ -42,7 +42,7 @@ const Country = ({
 }: CountryProps) => {
   return (
     <StyledCountry location={location}>
-      <CountryImage location={location} src={image} alt={alt} />
+      <CountryImage location={location} src={image} alt={alt ? alt : name} />
       <CountryInfo location={location}>
         <CountryName location={location}>{name}</CountryName>
         <CountryDetails location={location}>
