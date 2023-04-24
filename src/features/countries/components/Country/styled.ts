@@ -8,6 +8,7 @@ export const StyledCountry = styled.article`
   justify-content: space-between;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.elementsColor};
+  box-shadow: 1px 1px 10px ${({ theme }) => theme.colors.countriesShadowColor};
   color: ${({ theme }) => theme.colors.textColor};
   transition-property: background-color, color, transform, box-shadow;
   transition-duration: ${TRANSITION_DURATION};

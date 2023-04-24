@@ -9,6 +9,7 @@ const countriesSlice = createSlice({
     countries: [],
     status: "idle",
     selectedRegion: "",
+    currentPage: 1,
   },
   reducers: {
     fetchCountries: (state) => {
@@ -33,6 +34,9 @@ const countriesSlice = createSlice({
         state.selectedRegion = region;
       }
     },
+    setCurrentPage: (state, { payload }) => {
+      state.currentPage = payload;
+    },
   },
 });
 
@@ -41,6 +45,7 @@ export const {
   fetchCountriesSuccess,
   fetchCountriesError,
   setRegion,
+  setCurrentPage,
 } = countriesSlice.actions;
 
 const selectCountriesState = (state: RootState) => state.countries;
@@ -96,5 +101,8 @@ export const selectCountriesByQuery = (
 
 export const selectStatus = (state: RootState) =>
   selectCountriesState(state).status;
+
+export const selectCurrentPage = (state: RootState) =>
+  selectCountriesState(state).currentPage;
 
 export default countriesSlice.reducer;

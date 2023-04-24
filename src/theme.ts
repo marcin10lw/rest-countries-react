@@ -13,6 +13,7 @@ export const lightTheme = {
     backgroundColor: "hsl(0, 0%, 98%)",
     elementsColor: "hsl(0, 0%, 100%)",
     shadowColor: "hsl(0, 0%, 65%)",
+    countriesShadowColor: "hsl(0, 0%, 81%)",
   },
 };
 
@@ -24,6 +25,7 @@ export const darkTheme = {
     backgroundColor: "hsl(207, 26%, 17%)",
     elementsColor: "hsl(209, 23%, 22%)",
     shadowColor: "hsl(0, 0%, 3%)",
+    countriesShadowColor: "hsl(0, 0%, 0% / 15%)",
   },
 };
 

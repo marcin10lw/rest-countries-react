@@ -5,13 +5,17 @@ import {
   SearchInput,
   StyledSearch,
 } from "./styled";
+import { useDispatch } from "react-redux";
+import { setCurrentPage } from "../../countriesSlice";
 
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams({ country: "" });
   const query = searchParams.get("country");
+  const dispatch = useDispatch();
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+    dispatch(setCurrentPage(1));
 
     if (value.trim() === "") {
       searchParams.delete("country");
