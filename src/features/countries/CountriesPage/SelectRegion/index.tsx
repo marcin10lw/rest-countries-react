@@ -9,7 +9,11 @@ import {
 } from "./styled";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectSelectedRegion, setRegion } from "../../countriesSlice";
+import {
+  selectSelectedRegion,
+  setCurrentPage,
+  setRegion,
+} from "../../countriesSlice";
 import { useDispatch } from "react-redux";
 import { regions } from "./regions";
 
@@ -22,6 +26,11 @@ const SelectRegion = () => {
   const windowText = region
     ? regions.find(({ alias }) => region === alias)?.name
     : "Filter by Region";
+
+  const onButtonClick = (alias: string) => {
+    dispatch(setRegion(alias));
+    dispatch(setCurrentPage(1));
+  };
 
   return (
     <StyledSelectRegion>
@@ -47,7 +56,7 @@ const SelectRegion = () => {
           <motion.li key={id} variants={itemVariants}>
             <SelectButton
               isActive={alias === region}
-              onClick={() => dispatch(setRegion(alias))}
+              onClick={() => onButtonClick(alias)}
             >
               {name}
             </SelectButton>
