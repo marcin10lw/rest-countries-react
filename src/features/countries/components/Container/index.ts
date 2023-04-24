@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin-inline: auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    padding: 0 16px;
+    padding: 0 16px 40px;
   }
 
   ${({ location }: { location?: string }) =>

@@ -10,6 +10,10 @@ export const PaginationWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    gap: 6px;
+  }
 `;
 
 export const PaginationButton = styled.button`
@@ -27,6 +31,11 @@ export const PaginationButton = styled.button`
 
   &:hover {
     opacity: 0.75;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    font-size: 10px;
+    min-width: 22px;
   }
 
   ${({ active }: { active: boolean }) =>
