@@ -20,7 +20,6 @@ const CountryPage = () => {
   const country = useSelector(selectCountry);
   const status = useSelector(selectCountryStatus);
   const dispatch = useDispatch();
-  console.log(country);
 
   useEffect(() => {
     dispatch(fetchCountries());
