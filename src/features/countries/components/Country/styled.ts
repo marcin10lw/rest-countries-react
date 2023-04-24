@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { TRANSITION_DURATION } from "../../transition";
+import { TRANSITION_DURATION, TRANSITION_TIMING } from "../../transition";
 
 export const StyledCountry = styled.article`
   height: 100%;
@@ -27,6 +27,16 @@ export const StyledCountry = styled.article`
       align-items: center;
       gap: 144px;
 
+      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        grid-template-columns: auto;
+        justify-content: center;
+        gap: 80px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        gap: 44px;
+      }
+
       &:hover {
         transform: none;
         box-shadow: none;
@@ -44,6 +54,10 @@ export const CountryImage = styled.img`
     location === "countryPage" &&
     css`
       border-radius: 10px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        max-width: 800px;
+      }
     `}
 `;
 
@@ -66,6 +80,10 @@ export const CountryName = styled.h2`
     location === "countryPage" &&
     css`
       font-size: 32px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 22px;
+      }
     `}
 `;
 
@@ -83,6 +101,16 @@ export const CountryDetails = styled.div`
       font-size: 16px;
       margin-top: 24px;
       gap: 16px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        grid-template-columns: auto;
+        gap: 32px;
+        margin-top: 16px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 14px;
+      }
     `}
 `;
 
@@ -95,6 +123,10 @@ export const DetailsWrapper = styled.div`
     location === "countryPage" &&
     css`
       gap: 14px;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        gap: 12px;
+      }
     `}
 `;
 
@@ -116,6 +148,14 @@ export const BorderCountries = styled.div`
   gap: 16px;
   flex-wrap: wrap;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
   div {
     display: flex;
     align-items: center;
@@ -126,10 +166,15 @@ export const BorderCountries = styled.div`
   span {
     font-weight: 300;
     min-width: 96px;
-    padding: 5px 10px;
+    padding: 6px 10px;
     background-color: ${({ theme }) => theme.colors.elementsColor};
     text-align: center;
     border-radius: 2px;
     font-size: 14px;
+    transition: background-color ${TRANSITION_DURATION} ${TRANSITION_TIMING};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+      font-size: 12px;
+    }
   }
 `;
