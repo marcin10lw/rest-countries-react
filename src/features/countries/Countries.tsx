@@ -11,6 +11,7 @@ const Countries = () => {
         <Route path="/" element={<Navigate to="/countries" />} />
         <Route path="/countries" element={<CountriesPage />} />
         <Route path="/countries/:name" element={<CountryPage />} />
+        <Route path="*" element={<CountriesPage />} />
       </Routes>
     </>
   );
