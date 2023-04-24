@@ -1,22 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import { nanoid } from "nanoid";
-
-type Country = {
-  id: string;
-  flags: {
-    png: string;
-    alt: string;
-  };
-  name: {
-    common: string;
-    official: string;
-  };
-  altSpellings: string[];
-  capital: string;
-  population: number;
-  region: string;
-};
+import { Country } from "./types";
 
 const countriesSlice = createSlice({
   name: "countries",
@@ -60,14 +45,8 @@ export const {
 
 const selectCountriesState = (state: RootState) => state.countries;
 
-export const selectCountries = (state: RootState) =>
+export const selectCountries = (state: RootState): Country[] =>
   selectCountriesState(state).countries;
-
-export const selectCountryById = (
-  state: RootState,
-  id: string | undefined
-): Country =>
-  selectCountries(state).find((country: Country) => country.id === id)!;
 
 export const selectSelectedRegion = (state: RootState) =>
   selectCountriesState(state).selectedRegion;
