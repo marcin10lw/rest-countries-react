@@ -18,14 +18,16 @@ const CountriesPage = () => {
 
   return (
     <Container>
-      {status === "loading" && <Loader />}
-      {status === "success" && (
-        <>
-          <Navigation />
-          <CountriesList />
-        </>
-      )}
-      {status === "error" && <Error />}
+      <main>
+        {status === "loading" && <Loader />}
+        {status === "success" && (
+          <>
+            <Navigation />
+            <CountriesList />
+          </>
+        )}
+        {status === "error" && <Error />}
+      </main>
     </Container>
   );
 };
