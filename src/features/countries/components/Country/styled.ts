@@ -27,6 +27,7 @@ export const StyledCountry = styled.article`
       background-color: transparent;
       align-items: center;
       gap: 144px;
+      box-shadow: none;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-template-columns: auto;
@@ -164,15 +165,22 @@ export const BorderCountries = styled.div`
     flex-wrap: wrap;
   }
 
-  span {
+  a {
     font-weight: 300;
     min-width: 96px;
     padding: 6px 10px;
     background-color: ${({ theme }) => theme.colors.elementsColor};
+    color: ${({ theme }) => theme.colors.textColor};
     text-align: center;
-    border-radius: 2px;
+    border-radius: 3px;
     font-size: 14px;
-    transition: background-color ${TRANSITION_DURATION} ${TRANSITION_TIMING};
+    transition-property: background-color, color, opacity;
+    transition-duration: ${TRANSITION_DURATION};
+    transition-timing-function: ${TRANSITION_TIMING};
+
+    &:hover {
+      opacity: 0.75;
+    }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
       font-size: 12px;

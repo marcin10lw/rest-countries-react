@@ -1,4 +1,4 @@
-# Development in progress...
+
 
 ## [Demo](https://marcin10lw.github.io/rest-countries-react/) 👈
 

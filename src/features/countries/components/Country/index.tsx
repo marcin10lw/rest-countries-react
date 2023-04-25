@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   BorderCountries,
   CountryDetail,
@@ -83,7 +84,7 @@ const Country = ({
             )}
             {languages && (
               <CountryDetail>
-                Languages:<span>languages to map</span>
+                Languages:<span>{languages.join(", ")}</span>
               </CountryDetail>
             )}
           </DetailsWrapper>
@@ -93,7 +94,9 @@ const Country = ({
             Border Countries:
             <div>
               {borderCountries.map((country) => (
-                <span key={country}>{country}</span>
+                <Link to={`/countries/${country}`} key={country}>
+                  {country}
+                </Link>
               ))}
             </div>
           </BorderCountries>
