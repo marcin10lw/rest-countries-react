@@ -1,8 +1,45 @@
+# Marcin Augun - Where in the world?
 
+## Description
 
-## [Demo](https://marcin10lw.github.io/rest-countries-react/) 👈
+This time I have created Where in the worls website based on one of the numerous challenges of [Frontend Mentor](https://www.frontendmentor.io/home).
 
-## Getting Started with Create React App
+Be sure to check out the demo for a firsthand look at this excellent tool for locating and learning about a particular country.
+
+## Check out the [Demo](https://marcin10lw.github.io/rest-countries-react/#/countries) 👈
+
+As always this was an excellent learning opportunity in which I could improve making responsive websites using [React](https://legacy.reactjs.org/) and [React Router](https://reactrouter.com/en/main) and working with API using Redux Toolkit, Redux-saga.
+
+## Technologies used
+
+    ✔ React
+    ✔ TypeScript
+    ✔ Redux Toolkit
+    ✔ Redux-saga
+    ✔ React Router
+    ✔ Create-react-app
+    ✔ Webpack
+    ✔ Babel
+    ✔ Styled Components
+    ✔ Normalize
+    ✔ ES6+ Features
+    ✔ Framer Motion
+
+## Stand out! Features added independently:
+
+    ✔ Pagination view
+    ✔ Pagination logic
+    ✔ Theme toggler and regions selector animations
+
+## Page preview
+
+### Desktop preview
+
+![](whereInTheWorld-desktop.gif)
+
+### Mobile preview
+
+![](whereInTheWorld-mobile.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
