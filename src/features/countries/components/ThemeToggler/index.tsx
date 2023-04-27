@@ -1,5 +1,3 @@
-import { useDispatch } from "react-redux";
-import { selectIsDarkModeOn, setIsDarkModeOn } from "../../themeSlice";
 import {
   ToggleIconWrapper,
   TogglerButton,
@@ -7,7 +5,8 @@ import {
   TogglerWrapper,
 } from "./styled";
 import { motion, useAnimation } from "framer-motion";
-import { useSelector } from "react-redux";
+import { useContext } from "react";
+import { ColorModeContext } from "../../../../ColorModeContext";
 
 const iconVariants = {
   open: {
@@ -21,13 +20,11 @@ const iconVariants = {
 };
 
 const ThemeToggler = () => {
-  const isDarkModeOn = useSelector(selectIsDarkModeOn);
-
-  const dispatch = useDispatch();
   const animation = useAnimation();
+  const { toggleIsDarkModeOn } = useContext(ColorModeContext);
 
   const onButtonClick = () => {
-    dispatch(setIsDarkModeOn());
+    toggleIsDarkModeOn();
     animation.start("open");
   };
 
