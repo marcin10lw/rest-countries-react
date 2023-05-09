@@ -1,42 +1,50 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 import { createContext } from "react";
+import usePrefersColorScheme from "use-prefers-color-scheme";
 
-const getInitialState = () => {
+const getInitialState = (initialValue: string) => {
   const localStorageTheme = JSON.parse(localStorage.getItem("theme") as string);
 
   if (localStorageTheme === null) {
-    return false;
+    return initialValue;
   }
 
   return localStorageTheme;
 };
 
-type ColorModeContextState = {
-  isDarkModeOn: boolean;
-  toggleIsDarkModeOn: () => void;
+type ToggleThemeContextState = {
+  theme: string;
+  toggleTheme: () => void;
 };
 
-export const ColorModeContext = createContext({} as ColorModeContextState);
+export const ToggleThemeContext = createContext({} as ToggleThemeContextState);
 
-export const ColorModeProvider = ({ children }: PropsWithChildren) => {
-  const [isDarkModeOn, setIsDarkModeOn] = useState<boolean>(getInitialState());
+export const ToggleThemeProvider = ({ children }: PropsWithChildren) => {
+  const prefersColorScheme = usePrefersColorScheme();
+  const [theme, setTheme] = useState<string>(
+    getInitialState(prefersColorScheme)
+  );
 
   useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(isDarkModeOn));
-  }, [isDarkModeOn]);
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
 
-  const toggleIsDarkModeOn = () => {
-    setIsDarkModeOn((isDarkModeOn) => !isDarkModeOn);
+  const toggleTheme = () => {
+    setTheme((theme) => {
+      if (theme === "dark") return "light";
+
+      return "dark";
+    });
   };
 
   const value = {
-    isDarkModeOn,
-    toggleIsDarkModeOn: toggleIsDarkModeOn,
+    theme: theme,
+    toggleTheme: toggleTheme,
   };
 
   return (
-    <ColorModeContext.Provider value={value}>
+    <ToggleThemeContext.Provider value={value}>
       {children}
-    </ColorModeContext.Provider>
+    </ToggleThemeContext.Provider>
   );
 };

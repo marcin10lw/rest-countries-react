@@ -4,16 +4,16 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { HashRouter } from "react-router-dom";
-import { ColorModeProvider } from "./ColorModeContext";
+import { ToggleThemeProvider } from "./ColorModeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <HashRouter>
-        <ColorModeProvider>
+        <ToggleThemeProvider>
           <App />
-        </ColorModeProvider>
+        </ToggleThemeProvider>
       </HashRouter>
     </Provider>
   </React.StrictMode>

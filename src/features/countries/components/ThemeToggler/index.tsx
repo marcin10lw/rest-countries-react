@@ -6,7 +6,7 @@ import {
 } from "./styled";
 import { motion, useAnimation } from "framer-motion";
 import { useContext } from "react";
-import { ColorModeContext } from "../../../../ColorModeContext";
+import { ToggleThemeContext } from "../../../../ColorModeContext";
 
 const iconVariants = {
   open: {
@@ -21,10 +21,10 @@ const iconVariants = {
 
 const ThemeToggler = () => {
   const animation = useAnimation();
-  const { toggleIsDarkModeOn } = useContext(ColorModeContext);
+  const { toggleTheme } = useContext(ToggleThemeContext);
 
   const onButtonClick = () => {
-    toggleIsDarkModeOn();
+    toggleTheme();
     animation.start("open");
   };
 

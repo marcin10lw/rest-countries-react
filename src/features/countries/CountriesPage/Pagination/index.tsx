@@ -5,7 +5,6 @@ import {
   StyledPagination,
 } from "./styled";
 import {
-  selectCountries,
   selectCountriesByQuery,
   selectCurrentPage,
   setCurrentPage,
