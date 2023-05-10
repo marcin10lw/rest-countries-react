@@ -6,7 +6,7 @@ const GoBack = () => {
 
   return (
     <StyledGoBack>
-      <GoBackButton onClick={() => navigate("/countries")}>
+      <GoBackButton onClick={() => navigate(-1)}>
         <GoBackIcon />
         Back
       </GoBackButton>
