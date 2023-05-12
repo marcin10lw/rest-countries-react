@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../store";
-import { Country } from "../types";
+import { CountryType } from "../types";
 
 const countrySlice = createSlice({
   name: "country",
@@ -27,7 +27,7 @@ export const { fetchCountry, fetchCountrySuccess, fetchCountryError } =
 
 const selectCountryState = (state: RootState) => state.country;
 
-export const selectCountry = (state: RootState): Country[] | null =>
+export const selectCountry = (state: RootState): CountryType[] | null =>
   selectCountryState(state).country;
 
 export const selectCountryStatus = (state: RootState) =>

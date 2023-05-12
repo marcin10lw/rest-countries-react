@@ -7,29 +7,23 @@ import {
   OpenWindowButton,
   StyledSelectRegion,
 } from "./styled";
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import {
-  selectSelectedRegion,
-  setCurrentPage,
-  setRegion,
-} from "../../countriesSlice";
-import { useDispatch } from "react-redux";
+import { useContext, useState } from "react";
 import { regions } from "./regions";
+import { CountriesFilterParamsContext } from "../../CountriesFilterParamsContext";
 
 const SelectRegion = () => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
-  const region = useSelector(selectSelectedRegion);
-
-  const dispatch = useDispatch();
+  const { region, changeRegion, setCurrentPage } = useContext(
+    CountriesFilterParamsContext
+  );
 
   const windowText = region
     ? regions.find(({ alias }) => region === alias)?.name
     : "Filter by Region";
 
   const onButtonClick = (alias: string) => {
-    dispatch(setRegion(alias));
-    dispatch(setCurrentPage(1));
+    changeRegion(alias);
+    setCurrentPage(1);
   };
 
   return (

@@ -9,7 +9,7 @@ type Language = {
   [key: string]: string;
 };
 
-export type Country = {
+export type CountryType = {
   id: string;
   flags: {
     png: string;

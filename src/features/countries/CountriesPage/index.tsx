@@ -8,16 +8,18 @@ import Error from "../components/Error";
 import Navigation from "./Navigation";
 import CountriesList from "./CountriesList";
 import Pagination from "./Pagination";
+import { useQuery } from "@tanstack/react-query";
+import { getCountries } from "../getCountries";
 
 const CountriesPage = () => {
   const [countriesPerPage] = useState(25);
+  const { status } = useQuery(["countries"], getCountries);
 
-  const status = useSelector(selectStatus);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchCountries());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchCountries());
+  // }, []);
 
   return (
     <Container>

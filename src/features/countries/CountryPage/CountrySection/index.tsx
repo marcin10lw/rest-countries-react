@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Country from "../../components/Country";
-import { Country as CountryType } from "../../types";
+import { CountryType as CountryType } from "../../types";
 import { selectCountries } from "../../countriesSlice";
 import { StyledCountrySection } from "./styled";
 

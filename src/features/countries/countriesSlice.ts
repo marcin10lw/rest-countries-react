@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import { nanoid } from "nanoid";
-import { Country } from "./types";
+import { CountryType } from "./types";
 
 const countriesSlice = createSlice({
   name: "countries",
@@ -50,7 +50,7 @@ export const {
 
 const selectCountriesState = (state: RootState) => state.countries;
 
-export const selectCountries = (state: RootState): Country[] =>
+export const selectCountries = (state: RootState): CountryType[] =>
   selectCountriesState(state).countries;
 
 export const selectSelectedRegion = (state: RootState) =>
@@ -58,9 +58,9 @@ export const selectSelectedRegion = (state: RootState) =>
 
 const selectCountriesByRegion = (state: RootState) => {
   const region: string = selectSelectedRegion(state);
-  const countries: Country[] = selectCountries(state);
+  const countries: CountryType[] = selectCountries(state);
 
-  const countriesByRegion: Country[] = countries.filter((country) => {
+  const countriesByRegion: CountryType[] = countries.filter((country) => {
     return country.region?.toLocaleUpperCase() === region.toLocaleUpperCase();
   });
 
@@ -70,9 +70,9 @@ const selectCountriesByRegion = (state: RootState) => {
 export const selectCountriesByQuery = (
   state: RootState,
   query: string | null
-): Country[] => {
+): CountryType[] => {
   const region = selectSelectedRegion(state);
-  const countries: Country[] = region
+  const countries: CountryType[] = region
     ? selectCountriesByRegion(state)
     : selectCountries(state);
 
@@ -80,7 +80,7 @@ export const selectCountriesByQuery = (
     return countries;
   }
 
-  const countryNamesIncludeQuery = (country: Country) => {
+  const countryNamesIncludeQuery = (country: CountryType) => {
     const trimmedQuery = query.trim();
 
     return (
