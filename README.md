@@ -7,6 +7,7 @@ This time I have created Where in the worls website based on one of the numerous
 Be sure to check out the demo for a firsthand look at this excellent tool for locating and learning about a particular country.
 
 ## Challenges
+
 Users should be able to:
 
     - See all countries from the API on the homepage
@@ -16,7 +17,6 @@ Users should be able to:
     - Click through to the border countries on the detail page
     - Toggle the color scheme between light and dark mode
 
-
 ## Check out the [Demo](https://marcin10lw.github.io/rest-countries-react/#/countries) 👈
 
 As always this was an excellent learning opportunity in which I could improve making responsive websites using [React](https://legacy.reactjs.org/) and [React Router](https://reactrouter.com/en/main) and working with API using Redux Toolkit, Redux-saga.
@@ -25,22 +25,22 @@ As always this was an excellent learning opportunity in which I could improve ma
 
     ✔ React
     ✔ TypeScript
-    ✔ Redux Toolkit
-    ✔ Redux-saga
     ✔ React Router
+    ✔ Styled Components
+    ✔ Framer Motion
+    ✔ Context API
+    ✔ Tanstack (React) Query
     ✔ Create-react-app
     ✔ Webpack
     ✔ Babel
-    ✔ Styled Components
     ✔ Normalize
     ✔ ES6+ Features
-    ✔ Framer Motion
 
 ## Stand out! Features added independently:
 
     ✔ Pagination view
     ✔ Pagination logic
-    ✔ Theme toggler and regions selector animations
+    ✔ Theme toggler and regions selector animation
 
 ## Page preview
 
