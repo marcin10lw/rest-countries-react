@@ -10,7 +10,7 @@ import CountriesList from "./CountriesList";
 import Pagination from "./Pagination";
 
 const CountriesPage = () => {
-  const [countriesPerPage, setCountriesPerPage] = useState(25);
+  const [countriesPerPage] = useState(25);
 
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
