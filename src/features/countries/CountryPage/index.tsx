@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { Container } from "../components/Container";
-import Country from "../components/Country";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import { useEffect } from "react";
@@ -11,7 +10,6 @@ import {
   selectCountryStatus,
 } from "./countrySlice";
 import { useSelector } from "react-redux";
-import { fetchCountries, selectCountries } from "../countriesSlice";
 import CountrySection from "./CountrySection";
 import GoBack from "./GoBack";
 
@@ -22,7 +20,6 @@ const CountryPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCountries());
     dispatch(fetchCountry(name!));
   }, [name]);
 

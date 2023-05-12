@@ -1,8 +1,6 @@
-import { useSelector } from "react-redux";
-import { fetchCountries, selectStatus } from "../countriesSlice";
 import { Container } from "../components/Container";
-import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import {} from "react-redux";
+import { useContext, useState } from "react";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Navigation from "./Navigation";
@@ -10,16 +8,14 @@ import CountriesList from "./CountriesList";
 import Pagination from "./Pagination";
 import { useQuery } from "@tanstack/react-query";
 import { getCountries } from "../getCountries";
+import useCountries from "../useCountries";
+import { CountriesFilterParamsContext } from "../CountriesFilterParamsContext";
 
 const CountriesPage = () => {
   const [countriesPerPage] = useState(25);
   const { status } = useQuery(["countries"], getCountries);
-
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchCountries());
-  // }, []);
+  const { region } = useContext(CountriesFilterParamsContext);
+  const { countries } = useCountries(region);
 
   return (
     <Container>
@@ -28,8 +24,14 @@ const CountriesPage = () => {
         {status === "success" && (
           <>
             <Navigation />
-            <CountriesList countriesPerPage={countriesPerPage} />
-            <Pagination countriesPerPage={countriesPerPage} />
+            <CountriesList
+              countriesPerPage={countriesPerPage}
+              countries={countries}
+            />
+            <Pagination
+              countriesPerPage={countriesPerPage}
+              countries={countries}
+            />
           </>
         )}
         {status === "error" && <Error />}

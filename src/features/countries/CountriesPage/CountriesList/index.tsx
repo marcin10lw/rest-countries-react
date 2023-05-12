@@ -1,18 +1,17 @@
 import { StyledCountriesList } from "./styled";
 import { Link } from "react-router-dom";
 import Country from "../../components/Country";
-import useCountries from "../../useCountries";
 import { CountriesFilterParamsContext } from "../../CountriesFilterParamsContext";
 import { useContext } from "react";
+import { CountryType } from "../../types";
 
 type CountriesListProps = {
   countriesPerPage: number;
+  countries: CountryType[];
 };
 
-const CountriesList = ({ countriesPerPage }: CountriesListProps) => {
-  const { currentPage, region } = useContext(CountriesFilterParamsContext);
-
-  const { countries } = useCountries(region);
+const CountriesList = ({ countriesPerPage, countries }: CountriesListProps) => {
+  const { currentPage } = useContext(CountriesFilterParamsContext);
 
   const lastCountryIndex = currentPage * countriesPerPage;
   const firstCountryIndex = lastCountryIndex - countriesPerPage;

@@ -1,11 +1,14 @@
-import { useSelector } from "react-redux";
 import Country from "../../components/Country";
-import { CountryType as CountryType } from "../../types";
-import { selectCountries } from "../../countriesSlice";
+import { CountryType } from "../../types";
 import { StyledCountrySection } from "./styled";
+import { useQuery } from "@tanstack/react-query";
+import { getCountries } from "../../getCountries";
 
 const CountrySection = ({ country }: { country: CountryType[] }) => {
-  const countries = useSelector(selectCountries);
+  const { data: countries } = useQuery<CountryType[]>(
+    ["countries"],
+    getCountries
+  );
 
   return (
     <StyledCountrySection>

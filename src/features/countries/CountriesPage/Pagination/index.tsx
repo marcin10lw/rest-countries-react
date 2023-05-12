@@ -1,33 +1,23 @@
-import { useSelector } from "react-redux";
 import {
   PaginationButton,
   PaginationWrapper,
   StyledPagination,
 } from "./styled";
-import {
-  selectCountriesByQuery,
-  selectCurrentPage,
-  setCurrentPage,
-} from "../../countriesSlice";
-import { useSearchParams } from "react-router-dom";
-import { RootState } from "../../../../store";
-import { useDispatch } from "react-redux";
+import { useContext } from "react";
+import { CountriesFilterParamsContext } from "../../CountriesFilterParamsContext";
+import { CountryType } from "../../types";
 
 type PaginationProps = {
   countriesPerPage: number;
+  countries: CountryType[];
 };
 
-const Pagination = ({ countriesPerPage }: PaginationProps) => {
-  const [searchParams] = useSearchParams();
-  const query = searchParams.get("country");
-  const currentPage = useSelector(selectCurrentPage);
-  const countries = useSelector((state: RootState) =>
-    selectCountriesByQuery(state, query)
+const Pagination = ({ countriesPerPage, countries }: PaginationProps) => {
+  const { setCurrentPage, currentPage } = useContext(
+    CountriesFilterParamsContext
   );
-  const dispatch = useDispatch();
 
   const pageNumbers = [];
-
   for (let i = 1; i <= Math.ceil(countries.length / countriesPerPage); i++) {
     pageNumbers.push(i);
   }
@@ -36,7 +26,7 @@ const Pagination = ({ countriesPerPage }: PaginationProps) => {
   const onButtonClick = (number: number) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(() => {
-      dispatch(setCurrentPage(number));
+      setCurrentPage(number);
     }, EXAMPLE_DELAY);
   };
 
