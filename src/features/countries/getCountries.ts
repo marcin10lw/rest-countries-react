@@ -1,9 +1,5 @@
+import { wait } from "@testing-library/user-event/dist/utils";
 import axios from "axios";
-
-const wait = (exampleResponseDelay: number) =>
-  new Promise((resolve) => {
-    setTimeout(resolve, exampleResponseDelay);
-  });
 
 export const getCountries = async () => {
   await wait(1000);
