@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/rest-countries-react/static/js/main.3f28ad42.js",
+    "main.js": "/rest-countries-react/static/js/main.88252475.js",
     "index.html": "/rest-countries-react/index.html",
     "static/media/search.svg": "/rest-countries-react/static/media/search.fe4743d53b4b41c9c60035643d74c7de.svg",
     "static/media/toggle-icon.svg": "/rest-countries-react/static/media/toggle-icon.5f0db093d6d56eabfbe5e27009a8a0d7.svg",
     "static/media/go-back.svg": "/rest-countries-react/static/media/go-back.ab20ca323b508def24547fd7f26cd737.svg",
     "static/media/arrow.svg": "/rest-countries-react/static/media/arrow.73f3a34c3979e9a7f47ebc0f6f19d99b.svg",
-    "main.3f28ad42.js.map": "/rest-countries-react/static/js/main.3f28ad42.js.map"
+    "main.88252475.js.map": "/rest-countries-react/static/js/main.88252475.js.map"
   },
   "entrypoints": [
-    "static/js/main.3f28ad42.js"
+    "static/js/main.88252475.js"
   ]
 }
