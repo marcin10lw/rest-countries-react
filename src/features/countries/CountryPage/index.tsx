@@ -1,27 +1,15 @@
 import { useParams } from "react-router-dom";
-import { Container } from "../components/Container";
-import Loader from "../components/Loader";
-import Error from "../components/Error";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import {
-  fetchCountry,
-  selectCountry,
-  selectCountryStatus,
-} from "./countrySlice";
-import { useSelector } from "react-redux";
+import { Container } from "../common/Container";
+import Loader from "../common/Loader";
+import Error from "../common/Error";
 import CountrySection from "./CountrySection";
 import GoBack from "./GoBack";
+import { useQuery } from "@tanstack/react-query";
+import { getCountry } from "./getCountry";
 
 const CountryPage = () => {
   const { name } = useParams();
-  const country = useSelector(selectCountry);
-  const status = useSelector(selectCountryStatus);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCountry(name!));
-  }, [name]);
+  const { data: country, status } = useQuery(["country", name], getCountry);
 
   return (
     <Container location="countryPage">

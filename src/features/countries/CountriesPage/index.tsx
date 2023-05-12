@@ -1,15 +1,15 @@
-import { Container } from "../components/Container";
+import { Container } from "../common/Container";
 import {} from "react-redux";
 import { useContext, useState } from "react";
-import Loader from "../components/Loader";
-import Error from "../components/Error";
+import Loader from "../common/Loader";
+import Error from "../common/Error";
 import Navigation from "./Navigation";
 import CountriesList from "./CountriesList";
 import Pagination from "./Pagination";
 import { useQuery } from "@tanstack/react-query";
 import { getCountries } from "../getCountries";
-import useCountries from "../useCountries";
-import { CountriesFilterParamsContext } from "../CountriesFilterParamsContext";
+import useCountries from "./useCountries";
+import { CountriesFilterParamsContext } from "../common/CountriesFilterParamsContext";
 
 const CountriesPage = () => {
   const [countriesPerPage] = useState(25);

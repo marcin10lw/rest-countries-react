@@ -1,6 +1,6 @@
 import CountriesPage from "./CountriesPage";
 import CountryPage from "./CountryPage";
-import Header from "./components/Header";
+import Header from "./common/Header";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 const Countries = () => {

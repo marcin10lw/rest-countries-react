@@ -6,7 +6,7 @@ import {
 } from "./styled";
 import { motion, useAnimation } from "framer-motion";
 import { useContext } from "react";
-import { ToggleThemeContext } from "../../../../ColorModeContext";
+import { ToggleThemeContext } from "../ColorModeContext";
 
 const iconVariants = {
   open: {

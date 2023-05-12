@@ -3,7 +3,7 @@ import Countries from "./features/countries/Countries";
 import { darkTheme, lightTheme } from "./theme";
 import { GlobalStyle } from "./GlobalStyle";
 import { useContext } from "react";
-import { ToggleThemeContext } from "./ColorModeContext";
+import { ToggleThemeContext } from "./features/countries/common/ColorModeContext";
 
 function App() {
   const { theme } = useContext(ToggleThemeContext);

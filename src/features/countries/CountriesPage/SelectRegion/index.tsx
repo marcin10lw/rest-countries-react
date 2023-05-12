@@ -9,7 +9,7 @@ import {
 } from "./styled";
 import { useContext, useState } from "react";
 import { regions } from "./regions";
-import { CountriesFilterParamsContext } from "../../CountriesFilterParamsContext";
+import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
 
 const SelectRegion = () => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);

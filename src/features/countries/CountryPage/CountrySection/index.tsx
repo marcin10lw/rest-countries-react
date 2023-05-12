@@ -1,10 +1,10 @@
-import Country from "../../components/Country";
-import { CountryType } from "../../types";
+import Country from "../../common/Country";
+import { CountryType } from "../../common/types";
 import { StyledCountrySection } from "./styled";
 import { useQuery } from "@tanstack/react-query";
 import { getCountries } from "../../getCountries";
 
-const CountrySection = ({ country }: { country: CountryType[] }) => {
+const CountrySection = ({ country }: { country: CountryType }) => {
   const { data: countries } = useQuery<CountryType[]>(
     ["countries"],
     getCountries
@@ -13,36 +13,35 @@ const CountrySection = ({ country }: { country: CountryType[] }) => {
   return (
     <StyledCountrySection>
       <Country
-        name={country[0].name.common}
+        name={country.name.common}
         nativeName={
-          country[0].name.nativeName &&
-          country[0].name.nativeName[
-            Object.keys(country![0].name.nativeName)[0]
-          ].common
+          country.name.nativeName &&
+          country.name.nativeName[Object.keys(country!.name.nativeName)[0]]
+            .common
         }
-        image={country[0].flags.svg}
-        alt={country[0].flags.alt}
-        population={country[0].population}
-        capital={country[0].capital}
-        domain={country[0].tld[0]}
-        region={country[0].region}
-        subregion={country[0].subregion}
+        image={country.flags.svg}
+        alt={country.flags.alt}
+        population={country.population}
+        capital={country.capital}
+        domain={country.tld[0]}
+        region={country.region}
+        subregion={country.subregion}
         currencies={
-          country![0].currencies &&
-          Object.keys(country![0].currencies).map((currency) => {
-            return country[0].currencies[currency].name;
+          country!.currencies &&
+          Object.keys(country!.currencies).map((currency) => {
+            return country.currencies[currency].name;
           })
         }
         languages={
-          country![0].languages &&
-          Object.keys(country![0].languages).map((language) => {
-            return country[0].languages[language];
+          country!.languages &&
+          Object.keys(country!.languages).map((language) => {
+            return country.languages[language];
           })
         }
         borderCountries={
           countries &&
-          country[0].borders &&
-          country[0].borders.map((border) => {
+          country.borders &&
+          country.borders.map((border) => {
             return countries.find((country) => country.cca3 === border)!.name
               .common;
           })

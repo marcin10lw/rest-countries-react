@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCountries } from "./getCountries";
-import { CountryType } from "./types";
+import { getCountries } from "../getCountries";
+import { CountryType } from "../common/types";
 import { nanoid } from "nanoid";
 import { useSearchParams } from "react-router-dom";
 

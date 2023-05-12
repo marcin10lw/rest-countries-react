@@ -4,8 +4,8 @@ import {
   StyledPagination,
 } from "./styled";
 import { useContext } from "react";
-import { CountriesFilterParamsContext } from "../../CountriesFilterParamsContext";
-import { CountryType } from "../../types";
+import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
+import { CountryType } from "../../common/types";
 
 type PaginationProps = {
   countriesPerPage: number;

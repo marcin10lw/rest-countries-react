@@ -6,7 +6,7 @@ import {
   SearchInput,
   StyledSearch,
 } from "./styled";
-import { CountriesFilterParamsContext } from "../../CountriesFilterParamsContext";
+import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
 
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams({ country: "" });
