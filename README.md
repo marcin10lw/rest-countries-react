@@ -2,7 +2,7 @@
 
 ## Description
 
-This time I have created Where in the worls website based on one of the numerous challenges of [Frontend Mentor](https://www.frontendmentor.io/home).
+This time I have created Where in the worls website based on one of the numerous challenges of [Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
 
 Be sure to check out the demo for a firsthand look at this excellent tool for locating and learning about a particular country.
 
@@ -21,20 +21,18 @@ Users should be able to:
 
 As always this was an excellent learning opportunity in which I could improve making responsive websites using [React](https://legacy.reactjs.org/) and [React Router](https://reactrouter.com/en/main) and working with API using Redux Toolkit, Redux-saga.
 
-## Technologies used
+# 💻 Project Tech Stack:
 
-    ✔ React
-    ✔ TypeScript
-    ✔ React Router
-    ✔ Styled Components
-    ✔ Framer Motion
-    ✔ Context API
-    ✔ Tanstack (React) Query
-    ✔ Create-react-app
-    ✔ Webpack
-    ✔ Babel
-    ✔ Normalize
-    ✔ ES6+ Features
+![react](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+![typescript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+![reactrouter](https://img.shields.io/badge/React%20Router-CA4245.svg?style=for-the-badge&logo=React-Router&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![framer motion](https://img.shields.io/badge/Framer--Motion-0055FF.svg?style=for-the-badge&logo=Framer&logoColor=white)
+![react query](https://img.shields.io/badge/React%20Query-FF4154.svg?style=for-the-badge&logo=React-Query&logoColor=white)
+![create react app](https://img.shields.io/badge/Create%20React%20App-09D3AC.svg?style=for-the-badge&logo=Create-React-App&logoColor=white)
+![webpack](https://img.shields.io/badge/Webpack-8DD6F9.svg?style=for-the-badge&logo=Webpack&logoColor=black)
+![babel](https://img.shields.io/badge/Babel-F9DC3E.svg?style=for-the-badge&logo=Babel&logoColor=black)
+![normalize](https://img.shields.io/badge/Normalize.css-E3695F.svg?style=for-the-badge&logo=normalizedotcss&logoColor=white)
 
 ## Stand out! Features added independently:
 
@@ -52,36 +50,44 @@ As always this was an excellent learning opportunity in which I could improve ma
 
 ![](whereInTheWorld-mobile.gif)
 
+
+## Getting Started
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+To get a local copy up and running follow these simple steps.
 
-In the project directory, you can run:
+### Installing
 
-### `npm start`
+1. Clone the repo:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+git clone https://github.com/<your-username>/rest-countries-react.git
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Change into the project directory:
 
-### `npm run build`
+```bash
+cd rest-countries-react
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Running the development server
 
-### `npm run eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Then open http://localhost:3000 to view the app in your browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Building the app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run build
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The output will be generated in the `build` directory. You can then serve the app using a static file server.
