@@ -8,7 +8,7 @@ Be sure to check out the demo for a firsthand look at this excellent tool for lo
 
 ## Challenges
 
-Users should be able to:
+The Where in the World website allows users to:
 
  - See all countries from the API on the homepage
  - Search for a country using an input field
@@ -34,11 +34,10 @@ As always this was an excellent learning opportunity in which I could improve ma
 ![babel](https://img.shields.io/badge/Babel-F9DC3E.svg?style=for-the-badge&logo=Babel&logoColor=black)
 ![normalize](https://img.shields.io/badge/Normalize.css-E3695F.svg?style=for-the-badge&logo=normalizedotcss&logoColor=white)
 
-## Stand out! Features added independently:
+## Stand Out Features
 
-    ✔ Pagination view
-    ✔ Pagination logic
-    ✔ Theme toggler and regions selector animation
+- Pagination view and logic
+- Theme toggler and regions selector animation
 
 ## Page preview
 
