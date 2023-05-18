@@ -19,7 +19,7 @@ The Where in the World website allows users to:
 
 ## Check out the [Demo](https://marcin10lw.github.io/rest-countries-react/#/countries) 👈
 
-As always this was an excellent learning opportunity in which I could improve making responsive websites using [React](https://legacy.reactjs.org/) and [React Router](https://reactrouter.com/en/main) and working with API using Redux Toolkit, Redux-saga.
+As always this was an excellent learning opportunity in which I could improve making responsive websites using [React](https://legacy.reactjs.org/) and [React Router](https://reactrouter.com/en/main) and working with API using React Query.
 
 # 💻 Project Tech Stack:
 
