@@ -10,12 +10,12 @@ Be sure to check out the demo for a firsthand look at this excellent tool for lo
 
 Users should be able to:
 
-    - See all countries from the API on the homepage
-    - Search for a country using an input field
-    - Filter countries by region
-    - Click on a country to see more detailed information on a separate page
-    - Click through to the border countries on the detail page
-    - Toggle the color scheme between light and dark mode
+ - See all countries from the API on the homepage
+ - Search for a country using an input field
+ - Filter countries by region
+ - Click on a country to see more detailed information on a separate page
+ - Click through to the border countries on the detail page
+ - Toggle the color scheme between light and dark mode
 
 ## Check out the [Demo](https://marcin10lw.github.io/rest-countries-react/#/countries) 👈
 
@@ -61,7 +61,7 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/<your-username>/rest-countries-react.git
+git clone https://github.com/marcin10lw/rest-countries-react
 ```
 
 2. Change into the project directory:
@@ -83,11 +83,3 @@ npm start
 ```
 
 Then open http://localhost:3000 to view the app in your browser.
-
-### Building the app
-
-```bash
-npm run build
-```
-
-The output will be generated in the `build` directory. You can then serve the app using a static file server.
