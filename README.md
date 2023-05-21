@@ -8,18 +8,18 @@ Be sure to check out the demo for a firsthand look at this excellent tool for lo
 
 ## Challenges
 
-Users should be able to:
+The Where in the World website allows users to:
 
-    - See all countries from the API on the homepage
-    - Search for a country using an input field
-    - Filter countries by region
-    - Click on a country to see more detailed information on a separate page
-    - Click through to the border countries on the detail page
-    - Toggle the color scheme between light and dark mode
+ - See all countries from the API on the homepage
+ - Search for a country using an input field
+ - Filter countries by region
+ - Click on a country to see more detailed information on a separate page
+ - Click through to the border countries on the detail page
+ - Toggle the color scheme between light and dark mode
 
 ## Check out the [Demo](https://marcin10lw.github.io/rest-countries-react/#/countries) 👈
 
-As always this was an excellent learning opportunity in which I could improve making responsive websites using [React](https://legacy.reactjs.org/) and [React Router](https://reactrouter.com/en/main) and working with API using Redux Toolkit, Redux-saga.
+As always this was an excellent learning opportunity in which I could improve making responsive websites using [React](https://legacy.reactjs.org/) and [React Router](https://reactrouter.com/en/main) and working with API using React Query.
 
 # 💻 Project Tech Stack:
 
@@ -34,11 +34,10 @@ As always this was an excellent learning opportunity in which I could improve ma
 ![babel](https://img.shields.io/badge/Babel-F9DC3E.svg?style=for-the-badge&logo=Babel&logoColor=black)
 ![normalize](https://img.shields.io/badge/Normalize.css-E3695F.svg?style=for-the-badge&logo=normalizedotcss&logoColor=white)
 
-## Stand out! Features added independently:
+## Stand Out Features
 
-    ✔ Pagination view
-    ✔ Pagination logic
-    ✔ Theme toggler and regions selector animation
+- Pagination view and logic
+- Theme toggler and regions selector animation
 
 ## Page preview
 
@@ -61,7 +60,7 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/<your-username>/rest-countries-react.git
+git clone https://github.com/marcin10lw/rest-countries-react
 ```
 
 2. Change into the project directory:
@@ -83,11 +82,3 @@ npm start
 ```
 
 Then open http://localhost:3000 to view the app in your browser.
-
-### Building the app
-
-```bash
-npm run build
-```
-
-The output will be generated in the `build` directory. You can then serve the app using a static file server.
