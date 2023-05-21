@@ -2,11 +2,17 @@ import { PropsWithChildren, useEffect, useState } from "react";
 import { createContext } from "react";
 import usePrefersColorScheme from "use-prefers-color-scheme";
 
-const getInitialState = (initialValue: string) => {
-  const localStorageTheme = JSON.parse(localStorage.getItem("theme") as string);
+type Theme = "dark" | "light";
+
+const getInitialState = (initialValue: Theme | "no-preference"): Theme => {
+  const localStorageTheme = JSON.parse(localStorage.getItem("theme") as Theme);
 
   if (localStorageTheme === null) {
-    return initialValue;
+    if (initialValue === "no-preference") {
+      return "dark";
+    } else {
+      return initialValue;
+    }
   }
 
   return localStorageTheme;
@@ -21,7 +27,7 @@ export const ToggleThemeContext = createContext({} as ToggleThemeContextState);
 
 export const ToggleThemeProvider = ({ children }: PropsWithChildren) => {
   const prefersColorScheme = usePrefersColorScheme();
-  const [theme, setTheme] = useState<string>(
+  const [theme, setTheme] = useState<Theme>(
     getInitialState(prefersColorScheme)
   );
 
