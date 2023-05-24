@@ -17,7 +17,7 @@ The Where in the World website allows users to:
  - Click through to the border countries on the detail page
  - Toggle the color scheme between light and dark mode
 
-## Check out the [Demo](https://marcin10lw.github.io/rest-countries-react/#/countries) 👈
+## Live Site URL: [marcin10lw.github.io/rest-countries-react](https://marcin10lw.github.io/rest-countries-react/#/countries)
 
 As always this was an excellent learning opportunity in which I could improve making responsive websites using [React](https://legacy.reactjs.org/) and [React Router](https://reactrouter.com/en/main) and working with API using React Query.
 
