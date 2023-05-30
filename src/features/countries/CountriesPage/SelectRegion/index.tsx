@@ -32,6 +32,7 @@ const SelectRegion = () => {
         as={motion.button}
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsWindowOpen((isWindowOpen) => !isWindowOpen)}
+        onBlur={() => setIsWindowOpen(false)}
       >
         {windowText}
         <SelectRegionArrow open={isWindowOpen} />
