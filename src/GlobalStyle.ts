@@ -1,12 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import normalize from "styled-normalize";
-import { ThemeProps } from "./theme";
 import {
   TRANSITION_DURATION,
   TRANSITION_TIMING,
 } from "./features/countries/transition";
 
-export const GlobalStyle = createGlobalStyle<ThemeProps>`
+export const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   html {
