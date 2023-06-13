@@ -41,7 +41,11 @@ export const OpenWindowButton = styled.button`
   }
 `;
 
-export const SelectRegionArrow = styled(ArrowImage)`
+type SelectRegionArrowProps = {
+  open: boolean;
+};
+
+export const SelectRegionArrow = styled(ArrowImage)<SelectRegionArrowProps>`
   width: 12px;
   height: 12px;
   transition: transform 300ms ease-in-out;
@@ -51,7 +55,7 @@ export const SelectRegionArrow = styled(ArrowImage)`
     height: 10px;
   }
 
-  ${({ open }: { open: boolean }) =>
+  ${({ open }) =>
     open &&
     css`
       transform: rotate(180deg);
@@ -77,7 +81,11 @@ export const WindowList = styled.ul`
   }
 `;
 
-export const SelectButton = styled.button`
+type SelectButtonProps = {
+  isActive: boolean;
+};
+
+export const SelectButton = styled.button<SelectButtonProps>`
   padding: 0;
   background-color: transparent;
   color: inherit;
@@ -91,7 +99,7 @@ export const SelectButton = styled.button`
     opacity: 0.75;
   }
 
-  ${({ isActive }: { isActive: boolean }) =>
+  ${({ isActive }) =>
     isActive &&
     css`
       text-decoration: underline;

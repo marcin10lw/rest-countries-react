@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import {
   BorderCountries,
   CountryDetail,
@@ -23,7 +24,7 @@ type CountryProps = {
   languages?: string[];
   borderCountries?: string[];
   alt: string;
-  location?: string;
+  location?: "countryPage";
 };
 
 const Country = ({

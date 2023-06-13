@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as GoBackImage } from "./go-back.svg";
 import { TRANSITION_DURATION, TRANSITION_TIMING } from "../../transition";
+import { ReactComponent as GoBackImage } from "./go-back.svg";
 
 export const StyledGoBack = styled.nav`
   margin-top: 80px;

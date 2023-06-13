@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+
+import { getCountry } from "./getCountry";
 import { Container } from "../common/Container";
 import Loader from "../common/Loader";
-import Error from "../common/Error";
-import CountrySection from "./CountrySection";
 import GoBack from "./GoBack";
-import { useQuery } from "@tanstack/react-query";
-import { getCountry } from "./getCountry";
+import CountrySection from "./CountrySection";
+import Error from "../common/Error";
 
 const CountryPage = () => {
   const { name } = useParams();

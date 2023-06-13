@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "react-router-dom";
+
 import { getCountries } from "../getCountries";
 import { CountryType } from "../common/types";
 import { nanoid } from "nanoid";
-import { useSearchParams } from "react-router-dom";
 
 const useCountries = (region: string) => {
   const [searchParams] = useSearchParams();

@@ -16,7 +16,11 @@ export const PaginationWrapper = styled.div`
   }
 `;
 
-export const PaginationButton = styled.button`
+type PaginationButtonProps = {
+  active: boolean;
+};
+
+export const PaginationButton = styled.button<PaginationButtonProps>`
   padding: 8px 0;
   min-width: 40px;
   border: none;
@@ -38,7 +42,7 @@ export const PaginationButton = styled.button`
     min-width: 22px;
   }
 
-  ${({ active }: { active: boolean }) =>
+  ${({ active }) =>
     active &&
     css`
       outline: 1px solid ${({ theme }) => theme.colors.textColor};

@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { useSearchParams } from "react-router-dom";
+
+import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
 import {
   SearchIcon,
   SearchIconWrapper,
   SearchInput,
   StyledSearch,
 } from "./styled";
-import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
 
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams({ country: "" });

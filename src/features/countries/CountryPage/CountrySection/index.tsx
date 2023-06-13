@@ -1,8 +1,9 @@
+import { useQuery } from "@tanstack/react-query";
+
 import Country from "../../common/Country";
+import { getCountries } from "../../getCountries";
 import { CountryType } from "../../common/types";
 import { StyledCountrySection } from "./styled";
-import { useQuery } from "@tanstack/react-query";
-import { getCountries } from "../../getCountries";
 
 const CountrySection = ({ country }: { country: CountryType }) => {
   const { data: countries } = useQuery<CountryType[]>(

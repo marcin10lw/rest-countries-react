@@ -1,11 +1,12 @@
+import { useContext } from "react";
+
+import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
+import { CountryType } from "../../common/types";
 import {
   PaginationButton,
   PaginationWrapper,
   StyledPagination,
 } from "./styled";
-import { useContext } from "react";
-import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
-import { CountryType } from "../../common/types";
 
 type PaginationProps = {
   countriesPerPage: number;

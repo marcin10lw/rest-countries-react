@@ -1,7 +1,8 @@
 import { useContext, useEffect, useRef, useState } from "react";
+
 import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
-import { listVariants, itemVariants } from "./variants";
 import { motion } from "framer-motion";
+import { listVariants, itemVariants } from "./variants";
 import { regions } from "./regions";
 import {
   SelectButton,

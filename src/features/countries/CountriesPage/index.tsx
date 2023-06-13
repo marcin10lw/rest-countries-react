@@ -7,9 +7,10 @@ import Navigation from "./Navigation";
 import CountriesList from "./CountriesList";
 import Pagination from "./Pagination";
 import { useQuery } from "@tanstack/react-query";
+
+import { CountriesFilterParamsContext } from "../common/CountriesFilterParamsContext";
 import { getCountries } from "../getCountries";
 import useCountries from "./useCountries";
-import { CountriesFilterParamsContext } from "../common/CountriesFilterParamsContext";
 
 const CountriesPage = () => {
   const [countriesPerPage] = useState(25);

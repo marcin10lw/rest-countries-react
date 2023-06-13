@@ -1,7 +1,8 @@
+import { Routes, Route, Navigate } from "react-router-dom";
+
+import Header from "./common/Header";
 import CountriesPage from "./CountriesPage";
 import CountryPage from "./CountryPage";
-import Header from "./common/Header";
-import { Routes, Route, Navigate } from "react-router-dom";
 
 const Countries = () => {
   return (

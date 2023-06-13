@@ -1,9 +1,10 @@
-import { StyledCountriesList } from "./styled";
-import { Link } from "react-router-dom";
-import Country from "../../common/Country";
-import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+
+import { CountriesFilterParamsContext } from "../../common/CountriesFilterParamsContext";
 import { CountryType } from "../../common/types";
+import Country from "../../common/Country";
+import { StyledCountriesList } from "./styled";
 
 type CountriesListProps = {
   countriesPerPage: number;

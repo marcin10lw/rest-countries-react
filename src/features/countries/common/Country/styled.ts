@@ -1,7 +1,11 @@
 import styled, { css } from "styled-components";
 import { TRANSITION_DURATION, TRANSITION_TIMING } from "../../transition";
 
-export const StyledCountry = styled.article`
+type StyledCountryProps = {
+  location?: "countryPage";
+};
+
+export const StyledCountry = styled.article<StyledCountryProps>`
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -19,7 +23,7 @@ export const StyledCountry = styled.article`
     box-shadow: 0px 0px 20px ${({ theme }) => theme.colors.shadowColor};
   }
 
-  ${({ location }: { location?: string }) =>
+  ${({ location }) =>
     location === "countryPage" &&
     css`
       display: grid;
@@ -46,13 +50,13 @@ export const StyledCountry = styled.article`
     `}
 `;
 
-export const CountryImage = styled.img`
+export const CountryImage = styled.img<StyledCountryProps>`
   width: 100%;
   aspect-ratio: 5 / 3;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
 
-  ${({ location }: { location?: string }) =>
+  ${({ location }) =>
     location === "countryPage" &&
     css`
       border-radius: 10px;
@@ -63,22 +67,22 @@ export const CountryImage = styled.img`
     `}
 `;
 
-export const CountryInfo = styled.div`
+export const CountryInfo = styled.div<StyledCountryProps>`
   padding: 24px 24px 46px;
 
-  ${({ location }: { location?: string }) =>
+  ${({ location }) =>
     location === "countryPage" &&
     css`
       padding: 0;
     `}
 `;
 
-export const CountryName = styled.h2`
+export const CountryName = styled.h2<StyledCountryProps>`
   font-weight: 800;
   font-size: 18px;
   margin: 0;
 
-  ${({ location }: { location?: string }) =>
+  ${({ location }) =>
     location === "countryPage" &&
     css`
       font-size: 32px;
@@ -89,14 +93,14 @@ export const CountryName = styled.h2`
     `}
 `;
 
-export const CountryDetails = styled.div`
+export const CountryDetails = styled.div<StyledCountryProps>`
   font-size: 14px;
   display: grid;
   grid-template-columns: auto;
   gap: 8px;
   margin-top: 16px;
 
-  ${({ location }: { location?: string }) =>
+  ${({ location }) =>
     location === "countryPage" &&
     css`
       grid-template-columns: repeat(2, 1fr);
@@ -116,12 +120,12 @@ export const CountryDetails = styled.div`
     `}
 `;
 
-export const DetailsWrapper = styled.div`
+export const DetailsWrapper = styled.div<StyledCountryProps>`
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  ${({ location }: { location?: string }) =>
+  ${({ location }) =>
     location === "countryPage" &&
     css`
       gap: 14px;
