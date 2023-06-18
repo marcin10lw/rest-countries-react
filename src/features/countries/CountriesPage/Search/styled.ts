@@ -7,6 +7,7 @@ export const StyledSearch = styled.div`
   width: 100%;
   display: flex;
   color: ${({ theme }) => theme.colors.inputColor};
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   transition: color ${TRANSITION_DURATION} ${TRANSITION_TIMING};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
@@ -39,7 +40,6 @@ export const SearchInput = styled.input`
   background-color: ${({ theme }) => theme.colors.elementsColor};
   color: ${({ theme }) => theme.colors.inputColor};
   padding: 18px 0 18px 24px;
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
   border-radius: 0 5px 5px 0;
   border: none;
   font-size: 14px;
